@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "api openai langchain pydantic[dotenv] uvicorn"
+version = "0.1.0"
+description = ""
+authors = ["Victor Resende <victoresende19@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.115.4"
+uvicorn = {extras = ["standard"], version = "^0.32.0"}
+youtube-transcript-api = "^0.6.2"
+openai = "^1.54.3"
+python-dotenv = "^1.0.1"
+langchain = "^0.3.7"
+requests = "^2.32.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
