@@ -71,7 +71,7 @@ const InputForm: React.FC<InputFormProps> = ({ setResult }) => {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post('http://127.0.0.1:8000/generate-video-details/', {
+          const response = await axios.post('https://smartcontentai.onrender.com/generate-video-details/', {
                 video_url: videoUrl,
             });
             setResult(response.data);
