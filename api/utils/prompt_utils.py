@@ -5,7 +5,7 @@ def create_dalle_prompt(transcription: str) -> str:
     """
 
 def create_dalle3_prompt(dalle_content: str) -> str:
-    return f"Create an image with a minimalistic style, without any text with the following context: {dalle_content}"
+    return f"Create an image with a minimalistic style and realistic, without any text with the following context: {dalle_content}"
 
 def create_titles_prompt(transcription: str) -> str:
     return f"""Transcription: {transcription}

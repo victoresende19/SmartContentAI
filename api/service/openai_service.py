@@ -13,7 +13,7 @@ def generate_prompts(transcription: str) -> str:
     # Atualize para o método correto de ChatCompletion
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
-        temperature = 0.3,
+        temperature = 0.1,
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": prompt}
