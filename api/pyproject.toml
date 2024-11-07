@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "api openai langchain pydantic[dotenv] uvicorn"
+name = "SmartContentAI"
 version = "0.1.0"
 description = ""
 authors = ["Victor Resende <victoresende19@gmail.com>"]
