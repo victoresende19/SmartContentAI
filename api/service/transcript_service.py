@@ -5,17 +5,21 @@ from urllib.parse import urlparse, parse_qs
 
 def extract_video_id(video_url: str) -> str:
     """
-    Extracts the video ID from a YouTube URL.
+    Extracts the YouTube video ID from a URL.
     Supports various YouTube URL formats.
     """
-    parsed_url = urlparse(video_url)
-    if parsed_url.hostname in ["www.youtube.com", "youtube.com"]:
-        query_params = parse_qs(parsed_url.query)
-        return query_params.get("v", [None])[0]
-    elif parsed_url.hostname in ["youtu.be"]:
-        return parsed_url.path.lstrip("/")
-    else:
-        raise ValueError("Invalid YouTube URL format")
+    try:
+        parsed_url = urlparse(video_url)
+        hostname = parsed_url.hostname or ""
+        if hostname in ["www.youtube.com", "youtube.com"]:
+            query_params = parse_qs(parsed_url.query)
+            return query_params.get("v", [None])[0]
+        elif hostname in ["youtu.be"]:
+            return parsed_url.path.lstrip("/")
+        else:
+            raise ValueError("Invalid YouTube URL format")
+    except Exception as e:
+        raise ValueError(f"Error extracting video ID: {str(e)}")
 
 def get_transcription(video_url: str, languages=['en', 'pt']) -> str:
     """
@@ -30,7 +34,7 @@ def get_transcription(video_url: str, languages=['en', 'pt']) -> str:
         formatter = TextFormatter()
         return formatter.format_transcript(transcript)
     except NoTranscriptFound:
-        return f"No transcript found for the requested languages: {languages}. Try another video."
+        return f"No transcript found for the requested languages: {languages}."
     except TranscriptsDisabled:
         return "Transcripts are disabled for this video."
     except ValueError as ve:
