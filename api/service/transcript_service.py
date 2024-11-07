@@ -5,7 +5,7 @@ from youtube_transcript_api._errors import NoTranscriptFound, TranscriptsDisable
 def get_transcription(video_url: str, languages=['en', 'pt']) -> str:
     try:
         video_id = video_url.split("v=")[-1]
-        transcript = YouTubeTranscriptApi.get_transcript(video_id, languages, proxies={"https": "socks4://138.186.222.129:5678"})
+        transcript = YouTubeTranscriptApi.get_transcript(video_id, languages)
         formatter = TextFormatter()
         return formatter.format_transcript(transcript)
     except NoTranscriptFound:
