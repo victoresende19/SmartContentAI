@@ -35,10 +35,8 @@ def generate_titles_descriptions(transcription: str):
     )
 
     content = response.choices[0].message.content.split('\n')
-    print(response.choices[0].message.content)
-
+    print(prompt)
     filtered_data = [item.strip() for item in content if item.strip() != ""]
-    print(filtered_data)
     titles_index = filtered_data.index('**Títulos:**')
     descriptions_index = filtered_data.index('**Descrições:**')
 
