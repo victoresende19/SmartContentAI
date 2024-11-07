@@ -14,12 +14,12 @@ def create_titles_prompt(transcription: str) -> str:
     O resultado deve seguir o formato do exemplo abaixo:
 
     **Títulos:**
-    1. "Título criativo"
-    2. "Título criativo"
-    3. "Título criativo"
+    1. "Título 1"
+    2. "Título 2"
+    3. "Título 3"
 
     **Descrições:**
-    1. Descrição criativa.
-    2. Descrição criativa.
-    3. Descrição criativa.
+    1. Descrição 1.
+    2. Descrição 2.
+    3. Descrição 3.
     """
