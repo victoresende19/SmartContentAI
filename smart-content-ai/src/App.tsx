@@ -19,7 +19,7 @@ const AppContainer = styled.div`
 const Title = styled.h1`
   text-align: center;
   margin-bottom: 10px;
-  font-size: 64px;
+  font-size: 60px;
 `;
 
 const Description = styled.p`
