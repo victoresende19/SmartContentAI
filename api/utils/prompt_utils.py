@@ -12,7 +12,6 @@ def create_titles_prompt(transcription: str) -> str:
     Baseado na transcrição acima, crie inicialmente três títulos, após isso, crie 3 descrições envolventes e informativas para vídeos do YouTube. Cada título deve ser cativante e otimizado para mecanismos de busca, enquanto as descrições devem ser detalhadas, incluindo palavras-chave relevantes, um breve resumo do conteúdo do vídeo e um chamado para ação.
 
     O resultado deve seguir o formato do exemplo abaixo:
-
     **Títulos:**
     1. "Título 1"
     2. "Título 2"
@@ -23,5 +22,14 @@ def create_titles_prompt(transcription: str) -> str:
     2. Descrição 2.
     3. Descrição 3.
 
-    Se a transcrição for: Transcripts are disabled for this video. Retorne o prompt como: A transcrição desse vídeo está desabilitada ou seu IP foi barrado pelo YouTube.
+    Se a transcrição for: Transcripts are disabled for this video. Retorne o prompt como: 
+    **Títulos:**
+    1. "A transcrição desse vídeo está desabilitada ou seu IP foi barrado pelo YouTube."
+    2. "A transcrição desse vídeo está desabilitada ou seu IP foi barrado pelo YouTube."
+    3. "A transcrição desse vídeo está desabilitada ou seu IP foi barrado pelo YouTube."
+
+    **Descrições:**
+    1. A transcrição desse vídeo está desabilitada ou seu IP foi barrado pelo YouTube..
+    2. A transcrição desse vídeo está desabilitada ou seu IP foi barrado pelo YouTube..
+    3. A transcrição desse vídeo está desabilitada ou seu IP foi barrado pelo YouTube..
     """
