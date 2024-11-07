@@ -21,6 +21,16 @@ def extract_video_id(video_url: str) -> str:
     except Exception as e:
         raise ValueError(f"Error extracting video ID: {str(e)}")
 
+def get_available_languages(video_id: str) -> list:
+    """
+    Lists available transcript languages for a given YouTube video.
+    """
+    try:
+        transcripts = YouTubeTranscriptApi.list_transcripts(video_id)
+        return [trans.language for trans in transcripts]
+    except Exception as e:
+        raise RuntimeError(f"Could not list available languages: {str(e)}")
+
 def get_transcription(video_url: str, languages=['en', 'pt']) -> str:
     """
     Fetches the transcription for a given YouTube video URL in the specified languages.
@@ -30,9 +40,15 @@ def get_transcription(video_url: str, languages=['en', 'pt']) -> str:
         if not video_id:
             return "Invalid or missing video ID."
         
-        transcript = YouTubeTranscriptApi.get_transcript(video_id, languages)
-        formatter = TextFormatter()
-        return formatter.format_transcript(transcript)
+        available_languages = get_available_languages(video_id)
+        
+        for lang in languages:
+            if lang in available_languages:
+                transcript = YouTubeTranscriptApi.get_transcript(video_id, languages=[lang])
+                formatter = TextFormatter()
+                return formatter.format_transcript(transcript)
+        
+        return f"No transcript found for the requested languages: {languages}. Available: {available_languages}."
     except NoTranscriptFound:
         return f"No transcript found for the requested languages: {languages}."
     except TranscriptsDisabled:
@@ -41,3 +57,9 @@ def get_transcription(video_url: str, languages=['en', 'pt']) -> str:
         return f"Error: {str(ve)}"
     except Exception as e:
         return f"An unexpected error occurred: {str(e)}"
+
+# Exemplo de uso
+if __name__ == "__main__":
+    youtube_link = input("Enter YouTube URL: ")
+    result = get_transcription(youtube_link, languages=['en', 'pt'])
+    print(result)
