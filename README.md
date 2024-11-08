@@ -50,6 +50,11 @@ Ativação da API:
 poetry run uvicorn main:app --reload
 ```
 
+Para executar a API localmente, os seguintes métodos estarão disponíveis. Utilize ferramentas como o Postman ou Insomnia para realizar as requisições:
+- Gerar conteúdo:
+  - ``` (POST): http://127.0.0.1:8000/generate-video-details/```
+  - Corpo da Requisição JSON: ```{ "video_url": "https://www.youtube.com/watch?v=BjC0KUxiMhc" }```
+
 ## Frontend
 O frontend foi escrito em React através da linguagem Typescript.
 
@@ -63,13 +68,6 @@ Ativação da interface:
 ```
 npm start
 ```
-
-### Utilização - localmente
-Para executar a API localmente, os seguintes métodos estarão disponíveis. Utilize ferramentas como o Postman ou Insomnia para realizar as requisições:
-
-- Gerar conteúdo:
-  - ``` (POST): http://127.0.0.1:8000/generate-video-details/```
-  - Corpo da Requisição JSON: ```{ "video_url": "https://www.youtube.com/watch?v=BjC0KUxiMhc" }```
 
 <hr>
 
