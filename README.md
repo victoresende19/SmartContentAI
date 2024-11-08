@@ -63,6 +63,12 @@ Instalação das bibliotecas:
 npm install
 ```
 
+Troque o endpoint de consulta, caso o teste seja feito local, em: smart-content-ai > src > component > InputFrom.tsx:
+```
+http://127.0.0.1:8000/generate-video-details/
+```
+
+
 Ativação da interface:
 ```
 npm start
