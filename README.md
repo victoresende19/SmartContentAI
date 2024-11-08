@@ -23,8 +23,7 @@ O agente foi criado a partir das seguintes tecnologias:
 
 <hr>
 
-# Teste a Aplicaçãp
-<hr>
+# Teste a Aplicação
 
 ## API
 A API foi escrita em FastAPI através da lingugem Python e as devidas bibliotecas contidas no arquivo requirements.txt.
