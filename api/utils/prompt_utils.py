@@ -22,7 +22,7 @@ def create_titles_prompt(transcription: str) -> str:
     2. Descrição 2.
     3. Descrição 3.
 
-    Se a transcrição for: Transcripts are disabled for this video. Retorne o prompt como: 
+    Se a Transcription inicial for "Transcripts are disabled for this video". Retorne o prompt como: 
     **Títulos:**
     1. "A transcrição desse vídeo está desabilitada ou seu IP foi barrado pelo YouTube."
     2. "A transcrição desse vídeo está desabilitada ou seu IP foi barrado pelo YouTube."
