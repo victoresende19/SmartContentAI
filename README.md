@@ -8,6 +8,8 @@ Para facilitar o teste do SmartContentAI, foi desenvolvido um website que realiz
 
 O deploy da API foi realizado utilizando o [Render](https://dashboard.render.com/), sob o plano gratuito. Devido às limitações deste plano, como o uso de máquinas menos robustas, o tempo de resposta pode ser maior em comparação ao uso local da API. Por fim, o frontend da plataforma teve o deploy através do [Vercel](https://vercel.com/). Para acessar e testar o aplicativo, visite: [https://smart-content-br.vercel.app/](https://smart-content-br.vercel.app/).
 
+![image](https://github.com/user-attachments/assets/357431a3-c391-4a4c-8930-78eaacb6e9da)
+
 <hr>
 
 ## Tecnologias
