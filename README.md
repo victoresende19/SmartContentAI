@@ -76,6 +76,6 @@ O agente SmartContentAI foi criado seguindo a arquitetura abaixo:
 ![image](https://github.com/user-attachments/assets/2cf43b43-30af-4b1e-8a0d-d436372b065b)
 
 <hr>
+
 # Langflow
-# Acesse o fluxo
 O fluxo está disponível para download através do arquivo SmartContentAI.json, o qual pode ser importado via interface Langflow para testes. Recomendações: o projeto foi criado localmente, dessa forma, para testar o fluxo faça as devidas instalações das bibliotecas.
